@@ -9,6 +9,7 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
     ingredients = models.ManyToManyField(Ingredient, related_name="recipes")
 
     def __str__(self):
